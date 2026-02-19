@@ -1,0 +1,33 @@
+User {
+  _id
+  name
+  phoneNumber
+  about: "Hey there! I am using ChatMe"
+  profilePhoto
+  isOnline
+  lastSeen
+  createdAt
+}
+
+
+Chat {
+  _id
+  isGroupChat
+  chatName        // only for group
+  groupPhoto      // only for group
+  users: [UserId]
+  admins: [UserId] // only for group
+  lastMessage: MessageId
+  updatedAt
+}
+
+
+Message {
+  _id
+  chat: ChatId
+  sender: UserId
+  content
+  type: "text" | "image"
+  status: "sent" | "delivered" | "read"
+  createdAt
+}
