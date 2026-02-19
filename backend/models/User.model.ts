@@ -6,7 +6,7 @@ export interface IUser extends Document {
     password: string;
     about?: string;
     profilePhoto?: string;
-    lastSeen: Date;
+    lastSeen: Date| null;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -40,12 +40,13 @@ const UserSchema: Schema<IUser> = new Schema(
 
         profilePhoto: {
             type: String,
+            default: "",
             trim: true,
         },
 
         lastSeen: {
             type: Date,
-            default: Date.now,
+            default: null,
             index: true,
         },
     },
