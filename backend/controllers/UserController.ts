@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import jwt, { JwtPayload } from "jsonwebtoken";
+import cloudinary from "../config/cloudinary";
 
 import User from "../models/UserModel.js";
 
@@ -115,5 +116,34 @@ export const updateAbout = async (
       success: false,
       message: "Server Problem",
     });
+  }
+};
+
+export const updateProfilePhoto = async (req: Request, res: Response) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ message: "No file uploaded" });
+    }
+
+    const stream = cloudinary.uploader.upload_stream(
+      { folder: "chatme/profiles" },
+      async (error: any, result: any) => {
+        if (error) {
+          return res.status(500).json({ message: "Cloudinary error" });
+        }
+
+        const user = await User.findByIdAndUpdate(
+          req.user._id,
+          { profilePhoto: result.secure_url },
+          { new: true },
+        );
+
+        res.json(user);
+      },
+    );
+
+    stream.end(req.file.buffer);
+  } catch (err) {
+    res.status(500).json({ message: "Upload failed" });
   }
 };
