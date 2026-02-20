@@ -1,25 +1,37 @@
-import express, { Application, Request, Response } from "express";
-import cors from "cors";
+import express from "express";
+import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
-const app : Application = express();
-app.use(express.urlencoded({extended : true}));
+const app = express();
+
+/* ---------- middlewares ---------- */
 app.use(cors());
+app.use(express.json());
 
-app.get("/", (req: Request, res: Response) => {
-        res.status(200).json({
-        success: true,
-        message: "ChatMe API is running 🚀",
-    });
+/* ---------- test route ---------- */
+app.get("/", (req, res) => {
+  res.send("🚀 Server is running");
 });
 
-app.use((req: Request, res: Response) => {
-        res.status(404).json({
-        success: false,
-        message: "Route not found",
-    });
-});
+/* ---------- DB + Server ---------- */
+const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGO_URI as string;
 
-export default app;
+const startServer = async () => {
+  try {
+    await mongoose.connect(MONGO_URI);
+    console.log("✅ MongoDB connected");
+
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("❌ Server failed to start:", error);
+    process.exit(1);
+  }
+};
+
+startServer();
