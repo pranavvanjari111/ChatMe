@@ -1,0 +1,60 @@
+.nav {
+  width: 62px;
+  height: 100%;
+  background: var(--bg-app);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 0;
+}
+
+.logoWrap {
+  width: 38px;
+  height: 38px;
+  background: var(--teal);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+  color: #0f0e11;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-lo);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.icon:hover {
+  background: var(--bg-hover);
+  color: var(--text-mid);
+}
+
+.icon.active {
+  background: var(--teal-dim);
+  color: var(--teal);
+}

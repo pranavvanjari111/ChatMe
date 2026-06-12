@@ -1,0 +1,59 @@
+.inputContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 12px 14px;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+}
+
+.input {
+  flex: 1;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 10px 14px;
+  color: var(--text-hi);
+  font-size: 14px;
+  outline: none;
+  resize: none;
+  max-height: 120px;
+  line-height: 1.5;
+  transition: border-color 0.15s;
+}
+
+.input::placeholder {
+  color: var(--text-lo);
+}
+
+.input:focus {
+  border-color: var(--border-focus);
+}
+
+.send {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition:
+    background 0.15s,
+    transform 0.1s;
+}
+
+.send:hover {
+  background: var(--teal-hover);
+}
+
+.send:active {
+  transform: scale(0.92);
+}
+
+.send:disabled {
+  background: var(--bg-active);
+  color: var(--text-lo);
+}

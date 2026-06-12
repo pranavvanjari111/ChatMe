@@ -1,0 +1,16 @@
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-app);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 100%;
+  justify-content: flex-end;
+}

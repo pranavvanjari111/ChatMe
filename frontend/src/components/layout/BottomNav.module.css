@@ -1,0 +1,30 @@
+.nav {
+  display: flex;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 4px 6px;
+  color: var(--text-lo);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.item:hover { color: var(--text-mid); }
+
+.item.active { color: var(--teal); }
+
+.iconWrap {
+  font-size: 22px;
+  line-height: 1;
+}

@@ -1,0 +1,44 @@
+:root {
+  /* Backgrounds */
+  --bg-app: #f7f8fa;
+  --bg-panel: #ffffff;
+  --bg-input: #ffffff;
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
+
+  /* Text */
+  --text-hi: #111b21;
+  --text-mid: #54656f;
+  --text-lo: #667781;
+
+  /* Borders */
+  --border: #d1d7db;
+  --border-focus: #00a884;
+
+  /* Radius */
+  --r-md: 10px;
+  --r-xl: 20px;
+  --r-lg: 18px;
+  --r-max: 999px;
+
+  /* Brand Colors */
+  --teal: #00a884;
+  --teal-hover: #008f72;
+  --teal-dim: rgba(0, 168, 132, 0.12);
+
+  /* Status */
+  --red: #d93025;
+
+  --green: #25d366;
+  --bg-hover: #f5f6f6;
+  --bg-active: #e9edef;
+  --accent: var(--teal);
+  --bg-card: #ffffff;
+  --border: #d1d7db;
+  --text-lo: #667781;
+  --bubble-in: #ffffff;
+  --bubble-out: #d9fdd3;
+
+  --r-xs: 4px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Warm near-black backgrounds — brownish undertone, not blue-grey */
+  --bg-app:        #0f0e11;
+  --bg-panel:      #18161c;
+  --bg-card:       #201e26;
+  --bg-input:      #2a2731;
+  --bg-hover:      #302d3a;
+  --bg-active:     #383444;
+
+  /* Borders */
+  --border:        rgba(255,255,255,0.07);
+  --border-mid:    rgba(255,255,255,0.12);
+  --border-focus:  rgba(99,210,190,0.55);
+
+  /* Text — warm off-whites */
+  --text-hi:       #f0edf8;
+  --text-mid:      #a09ab8;
+  --text-lo:       #635e78;
+
+  /* Teal-to-indigo accent family */
+  --teal:          #3ecfb2;
+  --teal-dim:      rgba(62,207,178,0.14);
+  --teal-hover:    #34b89e;
+
+  /* Outgoing bubble: teal → indigo gradient (signature element) */
+  --bubble-out-a:  #1fa896;
+  --bubble-out-b:  #4f46c8;
+  --bubble-in:     #252230;
+
+  /* Status colours */
+  --green:         #3ecfb2;
+  --red:           #e05c6a;
+  --amber:         #d4915a;
+
+  /* Radii */
+  --r-xs:  4px;
+  --r-sm:  8px;
+  --r-md:  14px;
+  --r-lg:  20px;
+  --r-xl:  26px;
+  --r-max: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.35);
+  --shadow-md: 0 6px 24px rgba(0,0,0,0.5);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.65);
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: var(--text-hi);
+  background: var(--bg-app);
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+input, textarea {
+  font-family: inherit;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--bg-active); border-radius: var(--r-max); }
